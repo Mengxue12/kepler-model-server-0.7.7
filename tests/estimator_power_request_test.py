@@ -58,4 +58,5 @@ class Client:
 if __name__ == '__main__':
     client = Client(SERVE_SOCKET)
     for energy_source in PowerSourceMap.keys():
+        print("\n=============power estimated from source: ", energy_source, "===========\n")
         process(energy_source)

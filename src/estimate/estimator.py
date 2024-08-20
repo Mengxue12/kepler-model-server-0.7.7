@@ -53,6 +53,7 @@ def handle_request(data):
         msg = "output type {} is not supported".format(power_request.output_type)
         return {"powers": dict(), "msg": msg}
     
+    print("\n============ begin to handle request - energy source:", power_request.energy_source, "=============\n")
     output_type = ModelOutputType[power_request.output_type]
     # TODO: need revisit if get more than one rapl energy source
     if power_request.energy_source is None or 'rapl' in power_request.energy_source:
