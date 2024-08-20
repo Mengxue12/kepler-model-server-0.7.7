@@ -1,4 +1,10 @@
-FROM --platform=linux/amd64 quay.io/sustainable_computing_io/kepler_model_server_base:v0.7
+FROM python:3.8-slim
+COPY dockerfiles/requirements.txt .
+
+RUN apt-get update && \
+    apt-get install -y gcc build-essential 
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 WORKDIR /usr/local
 
